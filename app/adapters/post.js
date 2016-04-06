@@ -2,12 +2,12 @@ import ApplicationAdapter from './application';
 
 var ls = localStorage;
 
-function getPost(i){
-  if (ls['t_'+i]) {
+function getPost(id){
+  if (ls['t_'+id]) {
     return {
-      id: i,
-      title: ls['t_'+i],
-      body: ls['b_'+i]
+      id: id,
+      title: ls['t_'+id],
+      body: ls['b_'+id]
     }
   } else {
     return false
@@ -15,6 +15,7 @@ function getPost(i){
 }
 
 export default ApplicationAdapter.extend({
+
   findAll() {
     var i = 1;
     let result = [];
@@ -23,5 +24,13 @@ export default ApplicationAdapter.extend({
       ++i;
     }
     return result
-  }
+  },
+
+  findRecord(store, type, id) {
+    return getPost(id)
+  },
+
+  // createRecord: function(store, type, snapshot) {
+  //
+  // }
 });
