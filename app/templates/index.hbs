@@ -1,0 +1,9 @@
+<ul>
+  {{#each model as |post|}}
+    {{#link-to "post" post}}{{post.title}}{{/link-to}}
+      <!-- {{post.title}} -->
+    <br>
+  {{/each}}
+</ul>
+
+{{outlet}}
