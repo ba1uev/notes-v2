@@ -1,5 +1,8 @@
-{{outlet}}
-<h2>{{model.title}}</h2>
-<p>
-  {{model.body}}
-</p>
+<div class="editor" {{action "saveNote" on="keyUp"}}>
+  <div class="editor-title" contenteditable="true">
+    {{model.title}}
+  </div>
+  <div class="editor-body" contenteditable="true">
+    {{model.body}}
+  </div>
+</div>
